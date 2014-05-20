@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>注册会员</title>
+
+<head>
+<style type="text/css">
+	#A {
+		margin-left:500px;
+		margin-right:500px;
+		background-color:#CFF;
+	}
+	
+	#B {
+		text-align:center;
+		background-color:#0FC;
+		font-size:24px;
+		color:#F00;
+	}
+	#C {
+		background-color:#CFF;
+	}
+</style>
+
+	<script type="text/javascript">
+		function check_data(){
+			if(document.myForm.account.value.length == 0)
+			{
+				alert("账号不能为空哦！");
+				return false;
+			}
+			if(document.myForm.account.value.length > 10)
+			{
+				alert("账号不能超过10个字符哦！");
+				return false;
+			}
+			if(document.myForm.password.value.length == 0)
+			{
+				alert("密码不能为空哦！");
+				return false;
+			}
+			if(document.myForm.password.value.length > 10)
+			{
+				alert("密码不能超过10个字符哦！");
+				return false;
+			}
+			if(document.myForm.re_password.value.length == 0)
+			{
+				alert("确认密码不能空着哦！");
+				return false;
+			}
+			if(document.myForm.re_password.value != document.myForm.password.value)
+			{
+				alert("两次输入的密码不一致！");
+				return false;
+			}
+			myForm.submit();
+		}
+			
+    </script>
+</head>
+
+<body>
+<p id="B">请填写以下资料注册，其中账号和密码必填！</p>
+<div id="C">
+<div id="A">
+<form action="addmember.php" method="post" name="myForm">
+    <font color="#FF0066">账号：</font>
+    <input name="account" type="text" size="15"><br>
+	<font color="#000099">密码：</font>
+    <input name="password" type="password" size="15"><br>
+    <font color="#000099">确认密码：</font>
+    <input name="re_password" type="password" size="15"><br>
+    <font color="#FF0066">昵称：</font>
+    <input name="name" type="text" size="15"><br>
+    <input name="sex" type="radio" value="男">男<br>
+ 	<input name="sex" type="radio" value="女">女<br>
+    <input name="year" type="text" size="2">年
+    <input name="month" type="text" size="2">月
+    <input name="day" type="text" size="2">日<br>
+    <font color="#00CC00">电话：</font>
+    <input name="telephone" type="text" size="20"><br>
+    <font color="#00CC00">邮箱：</font>
+    <input name="email" type="text" size="30"><br>
+    <input type="button" value="注册" onClick="check_data()">
+    <input type="reset" value="重填"><br>
+</form>
+</div>
+</div>
+ 
+</body>
+</html>

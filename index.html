@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>会员管理系统</title>
+
+	<script type="text/javascript">
+		function check_data(){
+			if(document.myForm.account.value.length == 0)
+				alert("账号不能为空哦！");
+			else if(document.myForm.password.value.length == 0)
+				alert("密码不能为空哦！");
+			else
+			myForm.submit();
+		}
+			
+    </script>
+    
+<style type="text/css">
+	#A {
+		text-align:center;
+		background-color:#CCC
+	}
+	#B {
+		text-align:center;
+		background-color:#0FC;
+		font-size:24px;
+		color:#F00;
+	}
+		
+	
+</style>
+    
+</head>
+
+<body>
+<p id="B">欢迎使用本系统，如果已有账号请登录，没有请注册！</p>
+<div id="A">
+<form action="checkpwd.php" method="post" name="myForm">
+	<font color="#FF0066">账号：</font>
+    <input name="account" type="text" size="15"><br>
+	<font color="#000099">密码：</font>
+    <input name="password" type="password" size="15"><br>
+    
+    <input type="button" value="登录" onClick="check_data()">
+    <input type="reset" value="重填"><br><br>
+</form>
+<a href="join.html">注册</a>
+<a href="search_pwd.html">忘记密码</a>
+</div>
+</body>
+</html>
